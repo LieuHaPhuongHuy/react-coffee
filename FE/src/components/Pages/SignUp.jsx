@@ -15,7 +15,7 @@ const SignUp = () => {
   const mail = useRef();
 
   return (
-    <div className="relative mx-auto w-4/5 min-h-[24rem] bg-yellow-900 py-4 px-3 flex flex-col items-center justify-center rounded-full overflow-x-hidden ">
+    <div className="relative mt-10 mx-auto w-4/5 min-h-[24rem] bg-yellow-900 py-4 px-3 flex flex-col items-center justify-center rounded-full overflow-x-hidden ">
       <Link
         to="/sign-in"
         className="absolute left-0 text-4xl h-full w-1/5 flex items-center justify-center cursor-pointer hover:bg-orange-200/30 text-yellow-600 rounded-tl-full rounded-bl-full"
@@ -74,21 +74,25 @@ const SignUp = () => {
           />
         </div>
       </ThemeProvider>
-      <div
+      <Link
+        to={"/sign-in"}
         className="bg-orange-200 w-1/2 cursor-pointer flex items-center justify-center h-12 rounded-full mt-5"
-        onClick={() => {
-          setSignIn((prev) => {
-            prev.user = user.current.value;
-            prev.password = psw.current.value;
-            prev.address = address.current.value;
-            prev.email = mail.current.value;
-            localStorage.setItem("fake-user", JSON.stringify(prev));
-            return prev;
-          });
-        }}
       >
-        <div className="text-yellow-900">Đăng ký</div>
-      </div>
+        <div
+          onClick={() => {
+            setSignIn((prev) => {
+              prev.user = user.current.value;
+              prev.password = psw.current.value;
+              prev.address = address.current.value;
+              prev.email = mail.current.value;
+              localStorage.setItem("fake-user", JSON.stringify(prev));
+              return prev;
+            });
+          }}
+        >
+          <div className="text-yellow-900">Đăng ký</div>
+        </div>
+      </Link>
     </div>
   );
 };

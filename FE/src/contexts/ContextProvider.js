@@ -17,6 +17,7 @@ export const ContextProvider = ({ children }) => {
     address: "",
     email: "",
   });
+  const [isSignIn, setIsSignIn] = useState(false);
   const [showToast, setShowToast] = useState(false);
   const [status, setStatus] = useState({ status: "", message: "" });
 
@@ -111,6 +112,8 @@ export const ContextProvider = ({ children }) => {
         setShowToast,
         status,
         setStatus,
+        isSignIn,
+        setIsSignIn,
       }}
     >
       {children}

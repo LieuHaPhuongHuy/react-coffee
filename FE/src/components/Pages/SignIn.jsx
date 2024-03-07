@@ -6,7 +6,7 @@ import { faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
 const SignIn = () => {
-  const { theme, setShowToast, setStatus } = useStateContext();
+  const { theme, setShowToast, setStatus, setIsSignIn } = useStateContext();
   const user = useRef();
   const password = useRef();
   return (
@@ -50,35 +50,39 @@ const SignIn = () => {
           Quên mật khẩu?
         </div>
       </div>
-      <div
-        onClick={() => {
-          const data = JSON.parse(localStorage.getItem("fake-user"));
-          console.log(typeof data.user);
-          console.log(typeof user.current.value);
-          if (
-            user.current.value === data.user &&
-            password.current.value === data.password
-          ) {
-            setShowToast(true);
-            setStatus((prev) => {
-              prev.status = "Success";
-              prev.message = "Đăng nhập thành công";
-              return prev;
-            });
-            document.location.href = "/react-coffee";
-          } else {
-            setShowToast(true);
-            setStatus((prev) => {
-              prev.status = "Warning";
-              prev.message = "Vui lòng kiểm tra lại thông tin!";
-              return prev;
-            });
-          }
-        }}
+      <Link
+        to={"/"}
         className="bg-orange-200 cursor-pointer w-1/2 flex items-center justify-center h-12 rounded-full mt-5"
       >
-        <div className="text-yellow-900">Đăng nhập</div>
-      </div>
+        <div
+          onClick={() => {
+            setIsSignIn(true);
+            const data = JSON.parse(localStorage.getItem("fake-user"));
+            console.log(typeof data.user);
+            console.log(typeof user.current.value);
+            if (
+              user.current.value === data.user &&
+              password.current.value === data.password
+            ) {
+              setShowToast(true);
+              setStatus((prev) => {
+                prev.status = "Success";
+                prev.message = "Đăng nhập thành công";
+                return prev;
+              });
+            } else {
+              setShowToast(true);
+              setStatus((prev) => {
+                prev.status = "Warning";
+                prev.message = "Vui lòng kiểm tra lại thông tin!";
+                return prev;
+              });
+            }
+          }}
+        >
+          <div className="text-yellow-900">Đăng nhập</div>
+        </div>
+      </Link>
     </div>
   );
 };

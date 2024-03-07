@@ -1,0 +1,21 @@
+{% extends 'admin/layout/base.html' %}
+
+{% block admin %}
+<div class="flex">
+    <div id="navbar" class="w-1/5 bg-blue-600 min-h-screen flex flex-col text-white">
+        <a href="/admin" class="w-full px-5 py-3 hover:bg-white hover:text-blue-600 duration-500 font-semibold">
+            <i class="fa-solid fa-chart-simple pr-3 "></i>Thống kê</a>
+        <a href="/admin/management" class="w-full px-5 py-3 hover:bg-white hover:text-blue-600 duration-500 font-semibold">
+            <i class="fa-solid fa-folder pr-3 "></i>Quản lý sách</a>
+        <a href="/admin/modify" class="w-full px-5 py-3 hover:bg-white hover:text-blue-600 duration-500 font-semibold">
+            <i class="fa-solid fa-gear pr-3 "></i>Chỉnh sửa</a>
+    </div>
+    <div class="w-4/5">
+        {% block more %}
+
+        {% endblock %}
+    </div>
+</div>
+
+{% endblock %}
+

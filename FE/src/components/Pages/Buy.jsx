@@ -6,6 +6,9 @@ const Buy = () => {
     useStateContext();
   return (
     <div className="min-h-screen bg-yellow-900 dark:bg-grey-700 w-3/4 mx-auto">
+      <div className="text-center text-orange-200 text-5xl pt-10 font-bold">
+        Sản phẩm
+      </div>
       <div className="flex gap-3 flex-wrap px-14 py-16">
         {products.map((item, index) => (
           <div

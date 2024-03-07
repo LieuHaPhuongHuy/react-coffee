@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--    CDN-->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="https://www.pngitem.com/pimgs/m/19-194483_stack-of-books-icon-transparent-book-icon-png.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Podkova:wght@400;500;600&display=swap" rel="stylesheet">
+    <!--    -->
+    <title>BKShop</title>
+</head>
+<body>
+{% include 'client/layout/header.html' %}
+
+<div class="font-['Podkova'] min-h-screen bg-amber-400 max-w-screen">
+    {% block content %}
+
+    {% endblock %}
+</div>
+
+{% include 'client/layout/footer.html' %}
+</body>
+</html>

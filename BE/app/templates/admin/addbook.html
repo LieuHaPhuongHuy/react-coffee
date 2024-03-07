@@ -1,0 +1,59 @@
+{% extends 'admin/manage.html' %}
+
+{% block manage %}
+<div class="">
+    <h1 class="text-3xl font-bold text-center">THÊM SÁCH</h1>
+    <form action="/admin/management/add" method="post" class="flex flex-col gap-5 items-center my-5" enctype="multipart/form-data">
+        <div class="flex items-center">
+            <div class="w-40">
+                <label for="name">Tên sách:</label>
+            </div>
+            <input id="name" onchange="addBook(this)" type="text" name="name" class="border-2 py-1 px-5 rounded-lg border-blue-600 w-96">
+        </div>
+        <div class="flex items-center">
+            <div class="w-40">
+                <label for="author">Tên tác giả:</label>
+            </div>
+            <input id="author" type="text" name="author" class="border-2 py-1 px-5 rounded-lg border-blue-600 w-96">
+        </div>
+        <div class="flex items-center">
+            <div class="w-40">
+                Thể loại:
+            </div>
+            <div class="w-96 flex flex-wrap gap-5">
+                {% for cate in cates %}
+                <div class="w-1/3">
+                    <input type="radio" id="cate-{{ cate.id }}" name="cate" class="hidden peer" value="{{ cate.id }}"/>
+                    <div class=" border-2 border-blue-600 flex items-center justify-center cursor-pointer py-2 hover:bg-blue-600 hover:text-white duration-300 peer-checked:bg-blue-600 peer-checked:text-white rounded-lg">
+                        <label for="cate-{{ cate.id }}">{{ cate.name }}</label>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="flex items-center">
+            <div class="w-40">
+                <label for="price">Giá sách:</label>
+            </div>
+            <input id="price" name="price" type="text" class="border-2 py-1 px-5 rounded-lg border-blue-600 w-96">
+        </div>
+        <div class="flex items-center">
+            <div class="w-40">
+                <label for="quantity">Số lượng:</label>
+            </div>
+            <input id="quantity" name="quantity" type="text" class="border-2 py-1 px-5 rounded-lg border-blue-600 w-96">
+        </div>
+        <div class="flex items-center">
+            <div class="w-40">
+                <label for="image">Hình sách:</label>
+            </div>
+            <input id="image" name="image" type="file" class="image-book border-2 py-1 px-5 rounded-lg border-blue-600 w-96">
+        </div>
+        <button type="submit" class="hover:bg-blue-600 duration-300 w-96 py-3 border-2 border-blue-600 hover:text-white font-semibold text-xl rounded-full">
+            THÊM SÁCH
+        </button>
+    </form>
+<script src="{{ url_for('static', filename='js/book.js') }}"></script>
+</div>
+{% endblock %}
+

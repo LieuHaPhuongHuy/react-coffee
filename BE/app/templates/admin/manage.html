@@ -1,0 +1,15 @@
+{% extends 'admin/admin.html' %}
+
+{% block more %}
+<div class="">
+    <div class="flex my-3 ml-5 gap-3">
+        <a href="/admin/management" class="px-3 py-2 rounded-lg font-semibold hover:bg-blue-600 hover:text-white duration-300 border-2 border-blue-600">Quản lý sách</a>
+        <a href="/admin/management/add" class="px-3 py-2 rounded-lg font-semibold hover:bg-blue-600 hover:text-white duration-300 border-2 border-blue-600">Thêm sách</a>
+    </div>
+    <div class="ml-5">
+        {% block manage %}
+        {% endblock %}
+    </div>
+</div>
+{% endblock %}
+

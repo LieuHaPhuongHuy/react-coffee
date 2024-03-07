@@ -2,6 +2,8 @@ import React from "react";
 import { Menu, User } from "../Part";
 import { useStateContext } from "../../contexts/ContextProvider";
 import { icon } from "../../assets/images";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBell } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
   const { setActiveMenu } = useStateContext();
@@ -15,7 +17,15 @@ const Header = () => {
           BLACK ENERGY
         </div>
       </div>
-      <User />
+      <div className="flex justify-between">
+        <div className="flex items-center justify-center">
+          <FontAwesomeIcon
+            icon={faBell}
+            className="text-yellow-900 dark:text-orange-200 text-2xl p-3 mr-10 hover:text-yellow-600 cursor-pointer drop-shadow-xl"
+          />
+        </div>
+        <User />
+      </div>
     </div>
   );
 };

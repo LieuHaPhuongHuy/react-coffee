@@ -1,0 +1,62 @@
+{% extends 'client/layout/base.html' %}
+
+{% block content %}
+
+<div class="bg-yellow-700 min-h-screen border-b-2 border-amber-400 flex">
+    <div class="w-4/5">
+        <div class="bg-white w-full py-5 text-center font-bold text-2xl">
+            <i class="fa-solid fa-cart-shopping"></i>
+            Giỏ hàng
+        </div>
+        {% for cart in carts %}
+        <div class="cart-items flex items-center justify-evenly bg-amber-400 px-5 py-2 my-2">
+            <div class="">
+                <img src="{{ cart.book.image }}" alt="" class="drop-shadow-lg h-24 w-20 rounded-lg">
+            </div>
+            <div class="w-[20rem]">{{ cart.book.name }}</div>
+            <div class="w-24 price-items">{{ "{:,.0f}".format(cart.book.price) }}</div>
+            <div class="w-10 flex items-center text-white bg-yellow-700 rounded-full justify-evenly">
+                <input type="number" min="1"
+                       onchange="calcPrice(this)"
+                       class="quantity text-xl focus-within:outline-none bg-transparent text-center font-bold w-8 rounded-lg "
+                       name="quantity" value="{{ cart.quantity }}">
+            </div>
+            <div class="w-24 total-items">{{ "{:,.0f}".format(cart.book.price * cart.quantity) }}</div>
+
+            <div class="">
+                <input onchange="calcTotal(this)" type="checkbox" name="isPay" id="pay-{{ cart.book.id }}"  value="{{ cart.book.id }}" class="hidden peer">
+                <label for="pay-{{ cart.book.id }}" class="border-4 border-yellow-700 peer-checked:bg-yellow-700 peer-checked:text-white cursor-pointer
+                 py-2 px-5 duration-500 rounded-lg hover:bg-yellow-700 hover:text-white">
+                    <i class="fa-solid fa-dollar pr-1"></i>Thanh toán
+                </label>
+            </div>
+            <form action="/cart/remove" method="post" class="">
+                <input type="hidden" name="book_id" value="{{ cart.book.id }}">
+                <button type="submit" class="flex items-center border-4 border-yellow-700 cursor-pointer
+                 py-2 px-5 duration-500 rounded-lg hover:bg-yellow-700 hover:text-white">
+                    <i class="fa-solid fa-multiply pr-1"></i>
+                    Bỏ khỏi giỏ
+                </button>
+            </form>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="w-1/5">
+        <div class="sticky top-0">
+            <div class="bg-black ">
+                <div class="py-5 text-center text-2xl text-white">
+                    <i class="fa-solid fa-dollar"></i>
+                    Tổng giá trị
+                </div>
+            </div>
+            <div class="total-price text-2xl py-2 font-semibold text-black bg-white text-center">0
+            </div>
+            <div onclick="addOrder()" class="text-center py-3 bg-black text-white text-xl hover:text-black hover:bg-amber-400 duration-500 font-semibold cursor-pointer">
+                Thanh toán
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{{ url_for('static', filename='js/cart.js') }}"></script>
+
+{% endblock %}

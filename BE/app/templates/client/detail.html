@@ -1,0 +1,52 @@
+{% extends 'client/layout/base.html' %}
+
+{% block content %}
+
+<div class="flex pt-2">
+    <div class="w-1/5 flex flex-col items-center">
+        <div class="w-24 h-24 rounded-lg bg-white border-2 border-yellow-700 p-2 flex items-center justify-center">
+            <img src="{{ book.image }}" alt=" {{ book.name }} " class="max-w-full max-h-full drop-shadow-lg">
+        </div>
+    </div>
+    <div class="w-2/5 ">
+        <div class="h-[30rem] w-[30rem] drop-shadow-lg bg-yellow-700 rounded-lg relative before:content[''] before:h-48 before:w-full before:absolute before:bg-white before:-z-1 before:top-1/2 before:-translate-y-2/4">
+            <img src="{{ book.image }}" alt="{{ book.name }}"
+                 class="absolute scale-75 z-9 left-1/2 -translate-x-1/2 max-w-full max-h-full rounded-md drop-shadow-lg">
+        </div>
+    </div>
+    <div class="w-2/5 h-[30rem] flex flex-col justify-between">
+        <div class="flex flex-col gap-3">
+            <div class="bg-white self-end py-3 px-5 rounded-tl-full rounded-bl-full text-xl ">{{ book.name }}</div>
+            <div class="bg-white self-end py-3 px-5 rounded-tl-full rounded-bl-full text-xl">Tác giả: {{
+                book.author_book
+                }}
+            </div>
+            <div class="bg-white self-end p-5 font-bold rounded-tl-full rounded-bl-full text-2xl">{{ "{:,.0f}".format(book.price) }} đ
+            </div>
+        </div>
+        <div class="flex gap-5 w-full ">
+            <div class="text-xl py-5  w-1/2 bg-yellow-700 text-white hover:cursor-pointer hover:text-black hover:bg-white rounded-lg text-center transition duration-500">
+                <i class="fa-solid fa-dollar pr-3"></i>Mua ngay
+            </div>
+            <form action="/cart" method="post" class="text-xl py-5  w-1/2 bg-yellow-700 text-white hover:cursor-pointer hover:text-black hover:bg-white rounded-lg text-center transition duration-500">
+                <input type="hidden" name="book_id" value="{{ book.id }}">
+                <button type="submit">
+                    <i class="fa-solid fa-cart-shopping pr-3"></i>Thêm vào giỏ hàng
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="flex bg-yellow-700 mt-5">
+    <a href="/detail?book={{ book.name }}&book_id={{ book.id }}"
+       class="py-3 px-5 text-white hover:cursor-pointer hover:text-black hover:bg-white">Thông tin</a>
+    <a href="/description/detail?book={{ book.name }}&book_id={{ book.id }}"
+       class="py-3 px-5 text-white hover:cursor-pointer hover:text-black hover:bg-white">Mô tả</a>
+    <div class="py-3 px-5 text-white hover:cursor-pointer hover:text-black hover:bg-white">Đánh giá</div>
+</div>
+<div class="">
+    {% block detail %}
+
+    {% endblock %}
+</div>
+{% endblock %}

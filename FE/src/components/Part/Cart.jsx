@@ -16,7 +16,7 @@ const Cart = () => {
 
   return (
     <div className="w-96 h-full fixed top-0 right-0 bg-yellow-600 dark:bg-grey-600 z-30">
-      <div className="h-20 text-xl font-bold flex items-center justify-center bg-yellow-900 dark:bg-grey-900 text-yellow-600">
+      <div className="h-20 text-xl font-bold flex items-center justify-center bg-yellow-900 dark:bg-grey-900 text-orange-200 drop-shadow-xl">
         Giỏ hàng
       </div>
       <div className="">
@@ -74,7 +74,9 @@ const Cart = () => {
         <div className="">{formatMoney(sum)}</div>
         <div className="">
           <Link to={"/payment"}>
-            <div className="bg-yellow-600 px-7 py-4 rounded-lg">Thanh toán</div>
+            <div className="bg-orange-200 px-7 py-4 rounded-lg text-yellow-900">
+              Thanh toán
+            </div>
           </Link>
         </div>
       </div>
