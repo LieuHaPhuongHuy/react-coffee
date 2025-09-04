@@ -9,7 +9,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
      // <React.StrictMode>
      <ContextProvider>
-          <BrowserRouter basename="react-coffee" >
+          <BrowserRouter>
                <App />
           </BrowserRouter>
      </ContextProvider>
