@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { SignIn, SignUp, Home, Trial, Buy, Payment } from "./components/pages/";
-import { Header } from "./components/layout";
+import React, { useState, useEffect } from "react";
+import { SignIn, SignUp, Home, Trial, Buy, Payment } from "./components/Pages";
+import { Header } from "./components/Layout";
 import { Sidebar, Settings, Cart, Toast } from "./components/custom";
-import { Route, Routes as Router } from "react-router-dom";
+import { Route, Routes as Router, useNavigate } from "react-router-dom";
 import { useStateContext } from "./contexts/ContextProvider";
 import { faBox } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,8 +10,25 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export const App = () => {
   const { activeMenu } = useStateContext();
   const [showCart, setShowCart] = useState(false);
+
+  function RedirectHandler() {
+    const navigate = useNavigate();
+
+    useEffect(() => {
+      const searchParams = new URLSearchParams(window.location.search);
+      const redirectPath = searchParams.get("path");
+
+      if (redirectPath) {
+        navigate(redirectPath);
+      }
+    }, [navigate]);
+
+    return null;
+  }
+
   return (
     <div className={JSON.parse(localStorage.getItem("mode")) ? "dark" : ""}>
+      <RedirectHandler />
       <Toast />
       {/* SIDEBAR */}
       <div className="bg-orange-200 dark:bg-grey-900 min-h-screen m-0 p-0 box-border font-podkova flex transition-all duration-500 ease-linear">

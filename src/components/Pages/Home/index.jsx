@@ -1,5 +1,5 @@
 import React from "react";
-import { Slider, About, More, Branch, Trial } from "../../sections";
+import { Slider, About, More, Branch, Trial } from "../../Sections";
 import { Product } from "../../custom";
 const Home = () => {
   return (
