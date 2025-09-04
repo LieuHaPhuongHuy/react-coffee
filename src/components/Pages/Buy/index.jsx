@@ -1,6 +1,6 @@
 import React from "react";
-import { products } from "../../data/info";
-import { useStateContext } from "../../contexts/ContextProvider";
+import { products } from "../../../constants/info";
+import { useStateContext } from "../../../contexts/ContextProvider";
 const Buy = () => {
   const { formatMoney, setCart, cart, setTrial, setSum, sum, trial } =
     useStateContext();

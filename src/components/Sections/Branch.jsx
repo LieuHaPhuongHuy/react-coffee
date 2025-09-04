@@ -1,5 +1,5 @@
 import React from "react";
-import { branches } from "../../data/info";
+import { branches } from "../../constants/info";
 import Carousel from "react-material-ui-carousel";
 
 const Branch = () => {

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { contextToast } from "../../data/info";
+import { contextToast } from "../../constants/info";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCheck,

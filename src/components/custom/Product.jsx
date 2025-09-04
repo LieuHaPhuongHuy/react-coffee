@@ -1,5 +1,5 @@
 import React from "react";
-import { products } from "../../data/info";
+import { products } from "../../constants/info";
 
 const Product = () => {
   return (

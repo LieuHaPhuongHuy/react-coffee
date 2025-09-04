@@ -1,5 +1,5 @@
 import React from "react";
-import { Menu, User } from "../Part";
+import { Menu, User } from "../custom";
 import { useStateContext } from "../../contexts/ContextProvider";
 import { icon } from "../../assets/images";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

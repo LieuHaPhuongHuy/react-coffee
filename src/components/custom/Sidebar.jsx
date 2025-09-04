@@ -1,5 +1,5 @@
 import React from "react";
-import { nav } from "../../data/info";
+import { nav } from "../../constants/info";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import { Menu } from "./index";

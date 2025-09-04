@@ -1,5 +1,5 @@
 import React from "react";
-import { info } from "../../data/info";
+import { info } from "../../constants/info";
 import { icon } from "../../assets/images";
 const More = () => {
   return (

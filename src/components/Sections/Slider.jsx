@@ -1,5 +1,5 @@
 import React from "react";
-import { slide } from "../../data/slide";
+import { slide } from "../../constants/slide";
 import Carousel from "react-material-ui-carousel";
 
 const Slider = () => {

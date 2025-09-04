@@ -1,6 +1,6 @@
 import React from "react";
-import { Slider, About, More, Branch, Trial } from "../Sections";
-import { Product } from "../Part";
+import { Slider, About, More, Branch, Trial } from "../../sections";
+import { Product } from "../../custom";
 const Home = () => {
   return (
     <div className="">

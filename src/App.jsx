@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Home, Trial, Buy, Payment, SignIn, SignUp } from "./components/Pages";
-import { Header } from "./components/Layout";
-import { Sidebar, Settings, Cart, Toast } from "./components/Part";
+import { SignIn, SignUp, Home, Trial, Buy, Payment } from "./components/pages/";
+import { Header } from "./components/layout";
+import { Sidebar, Settings, Cart, Toast } from "./components/custom";
 import { Route, Routes as Router } from "react-router-dom";
 import { useStateContext } from "./contexts/ContextProvider";
 import { faBox } from "@fortawesome/free-solid-svg-icons";

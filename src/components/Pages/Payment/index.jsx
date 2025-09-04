@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { useStateContext } from "../../contexts/ContextProvider";
+import { useStateContext } from "../../../contexts/ContextProvider";
 import { Link, json } from "react-router-dom";
-import { payments } from "../../data/info";
+import { payments } from "../../../constants/info";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTruck, faCreditCard } from "@fortawesome/free-solid-svg-icons";
 
