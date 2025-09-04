@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/react-coffee/static/css/main.4bf9f466.css",
+    "main.js": "/react-coffee/static/js/main.e70b6c63.js",
+    "static/media/branch2.jpg": "/react-coffee/static/media/branch2.446f20e31fff43a15169.jpg",
+    "static/media/branch1.jpg": "/react-coffee/static/media/branch1.48ed248a2a51e99f2073.jpg",
+    "static/media/slide1.png": "/react-coffee/static/media/slide1.2a9670250c5ff8041171.png",
+    "static/media/slide3.png": "/react-coffee/static/media/slide3.6753079bdc20838a55dd.png",
+    "static/media/slide2.png": "/react-coffee/static/media/slide2.ff2dd1afacb0713c81fb.png",
+    "static/media/about.png": "/react-coffee/static/media/about.fd477ac9292722524662.png",
+    "index.html": "/react-coffee/index.html",
+    "main.4bf9f466.css.map": "/react-coffee/static/css/main.4bf9f466.css.map",
+    "main.e70b6c63.js.map": "/react-coffee/static/js/main.e70b6c63.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4bf9f466.css",
+    "static/js/main.e70b6c63.js"
+  ]
+}
