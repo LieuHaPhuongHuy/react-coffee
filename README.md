@@ -1,3 +1,9 @@
+# React 18.2.0
+
+## Prerequisites
+
+- React 18
+
 ## Get started
 
 1.Install dependencies
